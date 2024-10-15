@@ -1,34 +1,43 @@
-# Node Template Repo
+# E-Commerce Elements
 
-This repo should provide a stable template for practicing learning JS as a programming language and just 🏃‍♂️ running code from the terminal via Node.
+As the name implies, we will create some functional elements of an 'e-commerce' website.
 
-## Getting Started
+## Function Components
 
-Utilize your GitHub Classroom link or click the "Use this template" button to create a new repo. This will create a new repo with the same structure as this one on your GitHub account.
+We will create the following components:
 
-Clone the repo to your local machine by clicking the green "Code" button. Normally, the easiest way to do this is the GitHub CLI, assuming that you have it installed. If not, you can download it [here](https://cli.github.com/). You also need to run `gh auth login` to authenticate your GitHub account. One other with the GitHub CLI is that you may have to restart your terminal after installing it.
+- **Product Card**: A card that shows the product image, name, price, and a button to add the product to the cart.
+- **User Table**: A table of users, with their name, email, and a button to delete the user.
 
-![Clone the repo with GitHub CLI](./clone.png)
+These will contained in `src/components` folder. These will be **function components**. Here's a suggested architecture:
 
-You'll copy the command by clicking the copy icon there ☝️. Navigate to your `Code` or `Dev` or whatever directory you have where you are keeping your code projects and paste the command in.
+```shell
+src/
+  components/
+    product-card/
+        index.js
+    user-list/
+        index.js
+```
 
-⚠️ DO NOT clone a repo inside another repo. This will cause issues with git and you'll have to delete the inner repo to fix it. Make sure that you are in a directory that is not a git repo before cloning. To put it another way, if you see the annotation `(master)` or `(main)` in your terminal, you are in a git repo. You can check by running `git status`. If you see `fatal: not a git repository (or any of the parent directories): .git`, you are not in a git repo.
+In this architecture 🏗️, we create a separate directory 📁 for each component. We keep an `index.js` for each one.
+Now, within these files, since they are function components, we will name them like: `export default function ProductCard() { ... }`. Note that we will only export one component per file, hence we will use `default` export.
 
-So, again, make sure you are not in a git repo before cloning this repo. No nested repos, please 🙏:🏾.
+This means that for the import side of things, we **do not** destructure with `{}`. We will import like this: `import ProductCard from '.components/product/card';`.
 
-First, `cd` into the newly created repo. You can do `ls` to check for it and then type `cd` followed by at least the first few characters of the repo name. You will now have changed into the repo directory (it will probably show `(master)` or `(main)`.
+If you check the, the [product card component README,](./src/components/product/README.md) it is already done for you, as an example. Feel free to modify it as you see fit, and use it as a basis for completing the other components.
 
-Now, it's time to install the project's dependencies. You can do this by running `npm install` in the root of the project. This will install all the dependencies listed in the `package.json` file.
+You can also reference [`index.js`](./src/index.js) to see how I have implemented that component and used it render the catalog.
 
-Summarily, this checks the `package.json` file for the necessary `"dependencies"` and/or `"devDependencies"`. It communicates with the npm registry to download the necessary packages and install them in the `node_modules` directory. This directory is created in the root of the project and is where all the dependencies are stored. This directory is ignored 🙈 by Git because it is so bloated.
+## Utility Functions
 
-Now, open the code up with `code .`. This runs the `code` command (for VS Code) and opens the current directory (`.`) in the editor.
+We will create some utility functions that could be useful for an e-commerce application. You may use ESM **named exports** and keep all of the functions in a single file, `src/utils.js`.
 
-You should see a `.vscode` directory in the root of the project. This directory contains the settings and extensions that are recommended for this project. You should see a notification in the bottom right corner of the editor that says "Recommended Extensions Found". Click "Install All" to install the recommended extensions.
-If you don't, then hopefully 🤞🏾 that means that you have already installed the extensions.
+Here are the functions we will create:
 
-Check out the files - you'll see HTML, CSS, and JS files (if needed) in `src`.
+- **`formatPrice`**: A function that takes a number and returns a string formatted as a price. For example, `formatPrice(10)` should return `"$10.00"`.
+- **`calcPriceWithTax`**: A function that takes a price and a tax rate, and returns the price with tax included. For example, `calcPriceWithTax(10, 0.1)` should return `11`.
 
-> Do what must be done.
+### Stretch Goals (Optional - maybe some Extra Credit?)
 
-Write your code in `src`. Run your code with `node src/index.js` (or similar).
+- **`getCustomers`**: In our ['users database'](./src/db/users.js), each use has a `role` property. This function should return an array of users that have a role of `'Customer'`, not `'Admin'`. Referencing the 'database', there are currently 4️⃣ customers. **Note:** This is a difficult task given the limited amount of topics that we have covered, so it's fine if it's not perfect.
