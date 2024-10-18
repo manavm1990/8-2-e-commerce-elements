@@ -16,7 +16,7 @@ src/
   components/
     product/
         card.js
-    user-list/
+    user-table/
         index.js
 ```
 
