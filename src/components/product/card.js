@@ -17,7 +17,7 @@ export default function ProductCard(product) {
         <section>
           <p>${product.description}</p>
           <p><strong>Category:</strong> ${product.category}</p>
-          <p><strong>Price:</strong> $${product.price.toFixed(2)}</p>
+          <p><strong>Price:</strong> $${product.price}</p>
         </section>
         <footer>
           <button>Add to Cart</button>
