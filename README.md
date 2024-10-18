@@ -14,8 +14,8 @@ These will contained in `src/components` folder. These will be **function compon
 ```shell
 src/
   components/
-    product-card/
-        index.js
+    product/
+        card.js
     user-list/
         index.js
 ```
