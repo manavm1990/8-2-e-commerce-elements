@@ -7,6 +7,9 @@
   },
   "editor.bracketPairColorization.enabled": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -32,7 +35,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
   "workbench.colorCustomizations": {
-        "editor.lineHighlightBorder": "#9fced11f",
-        "editor.lineHighlightBackground": "#1073cf2d"
-    }
+    "editor.lineHighlightBorder": "#9fced11f",
+    "editor.lineHighlightBackground": "#1073cf2d"
+  }
 }
