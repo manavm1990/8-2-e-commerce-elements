@@ -2,6 +2,7 @@ import ProductCard from "./components/product/card.js";
 import catalog from "./db/catalog.js";
 import UserTable from "./components/user-table/index.js";
 import users from "./db/users.js";
+import formatPrice from "./utils.js";
 
 /**
  * Render the product cards.
@@ -25,3 +26,5 @@ console.info(productCards.join("\n"));
 // TODO: Render a table of users. Hint: See the 'database' of users...
 
 console.info(UserTable(users));
+
+console.info(formatPrice(10));
