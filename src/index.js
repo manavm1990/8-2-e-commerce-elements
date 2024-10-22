@@ -1,7 +1,8 @@
 import ProductCard from "./components/product/card.js";
-import catalog from "./db/catalog.js";
 import UserTable from "./components/user/table.js";
+import catalog from "./db/catalog.js";
 import users from "./db/users.js";
+import { formatPrice } from "./utils.js";
 
 /**
  * Render the product cards.
@@ -21,5 +22,8 @@ import users from "./db/users.js";
  */
 const productCards = catalog.map((product) => ProductCard(product));
 
-const usersTable = users.map((user) => UserTable(user));
+const usersTable = UserTable(users);
 console.log(usersTable);
+
+const formattedPrice = formatPrice(10); // $10
+console.log(formattedPrice);
