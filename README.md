@@ -16,8 +16,8 @@ src/
   components/
     product/
         card.js
-    user-table/
-        index.js
+    user/
+        table.js
 ```
 
 In this architecture 🏗️, we create a separate directory 📁 for each component. We keep an `index.js` for each one.

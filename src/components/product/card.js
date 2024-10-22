@@ -6,7 +6,6 @@
  * @param {string} product.description - The description of the product.
  * @param {string} product.category - The category of the product.
  * @param {number} product.price - The price of the product.
- * @returns {string} The HTML string representing the product card.
  */
 export default function ProductCard(product) {
   return `

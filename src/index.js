@@ -1,5 +1,8 @@
 import ProductCard from "./components/product/card.js";
+import UserTable from "./components/user/table.js";
 import catalog from "./db/catalog.js";
+import users from "./db/users.js";
+import { formatPrice } from "./utils.js";
 
 /**
  * Render the product cards.
@@ -18,6 +21,9 @@ import catalog from "./db/catalog.js";
  * We call the `ProductCard` function with the `product` as an argument...
  */
 const productCards = catalog.map((product) => ProductCard(product));
-console.info(productCards.join("\n"));
 
-// TODO: Render a table of users. Hint: See the 'database' of users...
+const usersTable = UserTable(users);
+console.log(usersTable);
+
+const formattedPrice = formatPrice(10); // $10
+console.log(formattedPrice);
